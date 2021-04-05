@@ -48,7 +48,7 @@ function App():JSX.Element {
           <AppContent>
             <AppHeader />
             <Switch>
-              <Route exact path='/'>
+              <Route path='/'>
                 <ContentDisplay />
               </Route>
               {/* <Route exact={true} path="/calculate-target"> */}
