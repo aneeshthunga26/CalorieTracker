@@ -1,6 +1,5 @@
-import {IAppState} from "../state/AppContext";
-import {ICalorieTargetAction} from "../actions/Actions";
-
+import { IAppState } from '../state/AppContext';
+import { ICalorieTargetAction } from '../actions/Actions';
 
 /**
  * A reducer to set the target calories
@@ -8,11 +7,9 @@ import {ICalorieTargetAction} from "../actions/Actions";
  * @param action - the dispatched {@link ICalorieTargetAction}
  * @return - the mutated {@link IAppState}
  */
-export default function targetCalorieReducer(state: IAppState, action: ICalorieTargetAction):IAppState {
-    return(
-        {
-            ...state,
-            targetCalories: action.payload,
-        }
-    );
+export default function targetCalorieReducer(state: IAppState, action: ICalorieTargetAction): IAppState {
+  return {
+    ...state,
+    targetCalories: action.payload,
+  };
 }

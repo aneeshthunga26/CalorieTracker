@@ -1,7 +1,9 @@
-export default function CalculateTargetDisplay() {
-    return(
-        <div>
-            <label>Calculate Calorie Target</label>
-        </div>
-    )
-};
+import React from 'react';
+
+export default function CalculateTargetDisplay():JSX.Element {
+  return (
+    <div>
+      <text>Calculate Calorie Target</text>
+    </div>
+  );
+}

@@ -1,11 +1,11 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import styled from 'styled-components';
 import AppHeader from './components/AppHeader';
 import ContentDisplay from './components/ContentDisplay/ContentDisplay';
 import AppContext from './state/AppContext';
-import {useAppState} from "./hooks/useAppState";
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import { useAppState } from './hooks/useAppState';
 // import CalculateTargetDisplay from "./components/CalorieTargetDisplay/CalculateTargetDiplay";
-import styled from "styled-components";
 
 /**
  * A flex box witch holds the all the app components
@@ -26,39 +26,39 @@ const AppContent = styled.div`
   border-radius: 1em;
   padding: 0.5% 0.5%;
   text-align: center;
-  background:rgba(255,255,255,0.4);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px);
 `;
 
 /**
  * The top level App component
  */
-function App() {
-    //the initial context
-    const appContext = useAppState({
-        items: [],
-        totalCalories: undefined,
-        targetCalories: undefined,
-    });
+function App():JSX.Element {
+  // the initial context
+  const appContext = useAppState({
+    items: [],
+    totalCalories: undefined,
+    targetCalories: undefined,
+  });
 
   return (
-      <Router>
-         <AppSection className="App">
-            <AppContext.Provider value={appContext}>
-                <AppContent>
-                    <AppHeader/>
-                        <Switch>
-                            <Route exact={true} path="/">
-                                <ContentDisplay/>
-                            </Route>
-                            {/*<Route exact={true} path="/calculate-target">*/}
-                            {/*    <CalculateTargetDisplay/>*/}
-                            {/*</Route>*/}
-                        </Switch>
-                </AppContent>
-            </AppContext.Provider>
-         </AppSection>
-      </Router>
+    <Router>
+      <AppSection className='App'>
+        <AppContext.Provider value={appContext}>
+          <AppContent>
+            <AppHeader />
+            <Switch>
+              <Route exact path='/'>
+                <ContentDisplay />
+              </Route>
+              {/* <Route exact={true} path="/calculate-target"> */}
+              {/*    <CalculateTargetDisplay/> */}
+              {/* </Route> */}
+            </Switch>
+          </AppContent>
+        </AppContext.Provider>
+      </AppSection>
+    </Router>
   );
 }
 

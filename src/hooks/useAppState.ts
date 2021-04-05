@@ -1,6 +1,6 @@
-import {IAppContext, IAppState} from "../state/AppContext";
-import {useReducer} from "react";
-import rootReducer from "../reducers/rootReducer";
+import { useReducer } from 'react';
+import { IAppContext, IAppState } from '../state/AppContext';
+import rootReducer from '../reducers/rootReducer';
 
 /**
  * A custom hook to obtain the current {@link IAppContext}.
@@ -8,11 +8,11 @@ import rootReducer from "../reducers/rootReducer";
  * @return the {@link IAppContext}
  */
 export const useAppState = (initialState: IAppState): IAppContext => {
-    //hook up the state and reducers
-    const [appState, dispatch] = useReducer(rootReducer, initialState);
+  // hook up the state and reducers
+  const [appState, dispatch] = useReducer(rootReducer, initialState);
 
-    return {
-        appState: appState,
-        dispatch: dispatch,
-    };
+  return {
+    appState,
+    dispatch,
+  };
 };

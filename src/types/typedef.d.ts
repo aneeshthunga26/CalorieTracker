@@ -1,7 +1,7 @@
-//Calorie Entry type declaration
+// Calorie Entry type declaration
 export interface CalorieEntry {
-    id: string;
-    item: string;
-    calories: number;
-    time: Date;
+  id: string;
+  item: string;
+  calories: number;
+  time: Date;
 }

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 // import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 import AppContext from '../../state/AppContext';
 import ContentInputForm from './ContentInputForm';
 import ContentItem from './ContentItem';
-import styled from "styled-components";
-import {TableHeader} from "./TableHeader";
+import { TableHeader } from './TableHeader';
 // import {PrimaryButton} from "../StyledComponents/PrimaryButton";
 
 const Ul = styled.ul`
@@ -16,21 +16,23 @@ const Ul = styled.ul`
  * and set target calories.
  */
 const ContentDisplay: React.FC = () => {
-    //get the global state
-    const {appState} = useContext(AppContext);
+  // get the global state
+  const { appState } = useContext(AppContext);
 
-    return(
-        <div>
-            <Ul>
-                {appState.items.length > 0 && <TableHeader/>}
-                {appState.items.map((entry, index) => <ContentItem key={index} value={entry} index={index}/>)}
-            </Ul>
-            <ContentInputForm/>
-            {/*<Link to="/calculate-target">*/}
-            {/*    <PrimaryButton>Calculate Target</PrimaryButton>*/}
-            {/*</Link>*/}
-        </div>
-    );
+  return (
+    <div>
+      <Ul>
+        {appState.items.length > 0 && <TableHeader />}
+        {appState.items.map((entry, index) => (
+          <ContentItem key={index} value={entry} index={index} />
+        ))}
+      </Ul>
+      <ContentInputForm />
+      {/* <Link to="/calculate-target"> */}
+      {/*    <PrimaryButton>Calculate Target</PrimaryButton> */}
+      {/* </Link> */}
+    </div>
+  );
 };
 
 export default ContentDisplay;
