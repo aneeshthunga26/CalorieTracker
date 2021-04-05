@@ -10,8 +10,8 @@ This is a simple practice project which showcases a simple redux like setup usin
  - npm / yarn
 
 ## Run locally
- - clone this repository.
- - navigate to the cloned directory.
- - run `npm start` or `yarn start` on the command line to start the development server.
- - a browser should open up with the app
- - if it does not, open any browser and open up "http://localhost:3000"
+ - Clone this repository.
+ - Navigate to the cloned directory.
+ - Run `npm install` or `yarn install` to download the required dependencies specified in `package.json`.
+ - Run `npm start` or `yarn start` on the command line to start the development server.
+ - A browser should open up with the app; if it does not, open any browser and open up "http://localhost:3000".
