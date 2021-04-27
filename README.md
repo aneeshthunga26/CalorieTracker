@@ -1,4 +1,4 @@
-# A Calorie Tracker Web App
+# A Calorie Tracker React App
 built using react and typescript. 
 
 ## About
