@@ -18,7 +18,7 @@ function App():JSX.Element {
   });
 
   return (
-    <Router>
+    <Router basename='/CalorieTracker'>
       <section className='App h-screen flex items-center justify-center'>
         <AppContext.Provider value={appContext}>
           <div className='card card-bordered bg-base-100 text-center w-screen xl:w-5/12 lg:w-5/12 md:w-5/12 sm:w-screen'>
