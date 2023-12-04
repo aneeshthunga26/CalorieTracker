@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/CalorieTracker/static/css/main.63e6e315.chunk.css",
-    "main.js": "/CalorieTracker/static/js/main.7459a273.chunk.js",
-    "main.js.map": "/CalorieTracker/static/js/main.7459a273.chunk.js.map",
-    "runtime-main.js": "/CalorieTracker/static/js/runtime-main.ec7b22eb.js",
-    "runtime-main.js.map": "/CalorieTracker/static/js/runtime-main.ec7b22eb.js.map",
-    "static/js/2.eb59a7f0.chunk.js": "/CalorieTracker/static/js/2.eb59a7f0.chunk.js",
-    "static/js/2.eb59a7f0.chunk.js.map": "/CalorieTracker/static/js/2.eb59a7f0.chunk.js.map",
+    "main.css": "/CalorieTracker/static/css/main.47b61403.css",
+    "main.js": "/CalorieTracker/static/js/main.0eea2e4a.js",
     "index.html": "/CalorieTracker/index.html",
-    "static/css/main.63e6e315.chunk.css.map": "/CalorieTracker/static/css/main.63e6e315.chunk.css.map",
-    "static/js/2.eb59a7f0.chunk.js.LICENSE.txt": "/CalorieTracker/static/js/2.eb59a7f0.chunk.js.LICENSE.txt"
+    "main.47b61403.css.map": "/CalorieTracker/static/css/main.47b61403.css.map",
+    "main.0eea2e4a.js.map": "/CalorieTracker/static/js/main.0eea2e4a.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.ec7b22eb.js",
-    "static/js/2.eb59a7f0.chunk.js",
-    "static/css/main.63e6e315.chunk.css",
-    "static/js/main.7459a273.chunk.js"
+    "static/css/main.47b61403.css",
+    "static/js/main.0eea2e4a.js"
   ]
 }
