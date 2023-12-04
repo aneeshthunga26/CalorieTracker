@@ -3,8 +3,6 @@ import { v4 as uuid } from 'uuid';
 import AppContext from '../../state/AppContext';
 import { CalorieEntry } from '../../types/typedef';
 import { IAlterCalorieAction } from '../../actions/Actions';
-import { TextInput } from '../StyledComponents/TextInput';
-import { PrimaryButton } from '../StyledComponents/PrimaryButton';
 
 /**
  * The calorie entry input form. Allows the users to add new calorie entries and also to edit the target calories.
@@ -79,17 +77,17 @@ const ContentInputForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <span>
-        <TextInput placeholder='Enter Food Item' value={item || ''} onChange={itemChangeHandler} />
-        <TextInput placeholder='Enter Calories' value={calories ? `${calories}` : ''} onChange={calorieChangeHandler} />
-        <TextInput
+      <span className='mt-5'>
+        <input type='text' className='input input-primary mt-5 mx-2' placeholder='Enter Food Item' value={item || ''} onChange={itemChangeHandler} />
+        <input type='text' className='input input-primary mt-5 mx-2' placeholder='Enter Calories' value={calories ? `${calories}` : ''} onChange={calorieChangeHandler} />
+        <input type='text' className='input input-primary mt-5 mx-2'
           placeholder='Enter Target (KCals)'
           value={targetCalories ? `${targetCalories}` : ''}
           onChange={targetCalorieChangeHandler}
         />
       </span>
       <div>
-        <PrimaryButton>+</PrimaryButton>
+        <button className='btn btn-primary m-3' type='submit'>Add Item</button>
       </div>
     </form>
   );

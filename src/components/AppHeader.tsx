@@ -1,16 +1,6 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import AppContext from '../state/AppContext';
 import CalorieWatcher from './CalorieWatcher';
-
-const Header = styled.header`
-  border-radius: 15px;
-  background: rgba(0, 0, 30, 0.7);
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
 
 /**
  * A Header bar which displays the current day, the calories consumed so far and the target if set
@@ -21,10 +11,10 @@ const AppHeader: React.FC = (): JSX.Element => {
   const { appState } = useContext(AppContext);
 
   return (
-    <Header className='App-header'>
-      <div>Calorie Tracker</div>
+    <div className='rounded-t-lg m-4 bg-base-100 text-2xl'>
+      <h1>Calorie Tracker</h1>
       <CalorieWatcher consumed={appState.totalCalories} target={appState.targetCalories} />
-    </Header>
+    </div>
   );
 };
 

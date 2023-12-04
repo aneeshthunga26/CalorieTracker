@@ -1,34 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import styled from 'styled-components';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AppHeader from './components/AppHeader';
 import ContentDisplay from './components/ContentDisplay/ContentDisplay';
 import AppContext from './state/AppContext';
 import { useAppState } from './hooks/useAppState';
 // import CalculateTargetDisplay from "./components/CalorieTargetDisplay/CalculateTargetDiplay";
-
-/**
- * A flex box witch holds the all the app components
- */
-const AppSection = styled.section`
-  height: 100vh;
-  display: flex;
-  padding: 0 3%;
-  align-items: center;
-  justify-content: center;
-`;
-
-/**
- * The main display area, shows up as a card with a blurred background
- */
-const AppContent = styled.div`
-  width: 90vh;
-  border-radius: 1em;
-  padding: 0.5% 0.5%;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(20px);
-`;
 
 /**
  * The top level App component
@@ -43,21 +19,19 @@ function App():JSX.Element {
 
   return (
     <Router>
-      <AppSection className='App'>
+      <section className='App h-screen flex items-center justify-center'>
         <AppContext.Provider value={appContext}>
-          <AppContent>
+          <div className='card card-bordered bg-base-100 text-center w-screen xl:w-5/12 lg:w-5/12 md:w-5/12 sm:w-screen'>
             <AppHeader />
-            <Switch>
-              <Route path='/'>
-                <ContentDisplay />
-              </Route>
+            <Routes>
+              <Route path='/' element={<ContentDisplay />} />
               {/* <Route exact={true} path="/calculate-target"> */}
               {/*    <CalculateTargetDisplay/> */}
               {/* </Route> */}
-            </Switch>
-          </AppContent>
+            </Routes>
+          </div>
         </AppContext.Provider>
-      </AppSection>
+      </section>
     </Router>
   );
 }

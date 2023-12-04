@@ -1,49 +1,11 @@
 import React, { useContext } from 'react';
-import styled from 'styled-components';
 import { CalorieEntry } from '../../types/typedef';
 import AppContext from '../../state/AppContext';
-import { PrimaryButton } from '../StyledComponents/PrimaryButton';
 
 interface Props {
   value: CalorieEntry;
   index: number;
 }
-
-interface SpanProps {
-  index: number;
-}
-
-const Li = styled.li`
-  list-style-type: none;
-  padding: 2px 2px;
-`;
-
-const Span = styled.span`
-  background: ${(props: SpanProps) => (props.index % 2 === 0 ? 'rgba(130,130,160,0.3)' : 'rgba(255,255,255,0.3)')};
-  border-radius: 5px;
-  height: 50px;
-  text-align: left;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-`;
-
-const Item = styled.label`
-  padding-left: 10px;
-  flex: 3;
-`;
-
-const TimeAdded = styled.label`
-  flex: 2;
-`;
-
-const Calories = styled.label`
-  flex: 2;
-`;
-
-const RemoveButton = styled(PrimaryButton)`
-  flex: 1;
-`;
 
 /**
  * Returns the given text with the first character in Uppercase
@@ -78,14 +40,12 @@ const ContentItem: React.FC<Props> = props => {
   }
 
   return (
-    <Li key={props.value.id}>
-      <Span index={props.index}>
-        <Item>{toSentenceCase(props.value.item)}</Item>
-        <Calories>{props.value.calories}</Calories>
-        <TimeAdded>{`${props.value.time.getHours()}:${props.value.time.getMinutes()}`}</TimeAdded>
-        <RemoveButton onClick={handleClick}>Remove</RemoveButton>
-      </Span>
-    </Li>
+    <tr className={`${props.index % 2 === 0 ? 'bg-base-200' : 'bg-base-300'}`} key={props.value.id}>
+      <td>{toSentenceCase(props.value.item)}</td>
+      <td>{props.value.calories}</td>
+      <td>{`${props.value.time.getHours()}:${props.value.time.getMinutes()}`}</td>
+      <td className='btn btn-circle btn-outline btn-sm mt-2' onClick={handleClick}><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg></td>
+    </tr>
   );
 };
 

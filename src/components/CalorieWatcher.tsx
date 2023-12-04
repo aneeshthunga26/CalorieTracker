@@ -43,7 +43,7 @@ function constructDisplayString(consumed?: number, target?: number): string {
  * Displays a formatted string with the current day, total consumed and target calories if they are available.
  * @param props: pass in a {@link CalorieWatcherProps} with the total and consumed calories.
  */
-const CalorieWatcher: React.FC<CalorieWatcherProps> = (props?): JSX.Element => {
+const CalorieWatcher: React.FC<CalorieWatcherProps> = (props): JSX.Element => {
   // get the display string from the custom hook
   const displayString = useCalorieDisplayString(props);
 
